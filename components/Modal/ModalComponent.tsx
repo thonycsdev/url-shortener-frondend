@@ -12,10 +12,10 @@ export default function ModalComponent() {
 			setShortUrl(response.url);
 		}).finally(() => setIsLoading(false));
 	};
-	return <div className="drop-shadow-md bg-modalColor place-self-center w-5/6 h-5/6 grid grid-cols-1 grid-rows-5 gap-10 p-10">
-		<h3 className="place-self-center font-bold text-white">URL REDUCER 🤏</h3>
-		<input onChange={(ev => setUrl(ev.target.value))} placeholder="Type your URL to be shortened" className="drop-shadow-2xl text-3xl w-full h-2/4 p-4 place-self-end rounded-lg" />
-		<button disabled={url.length <= 10} onClick={handleMakeItShortClick} className="rounded-lg drop-shadow-2xl bg-reduceButtonColor self-start h-2/4 w-1/2 justify-self-center hover:scale-125 transition-transform transform-gpu ">Reduce</button>
+	return <div className="drop-shadow-md bg-modalColor rounded-lg w-3/4 min-h-96 grid grid-cols-1">
+		<h3 className="font-bold text-white text-center  self-center">URL REDUCER 🤏</h3>
+		<input onChange={(ev => setUrl(ev.target.value))} placeholder="Type your URL to be shortened" className="drop-shadow-2xl w-11/12 h-7 p-4 rounded-lg place-self-center" />
+		<button disabled={url.length <= 10} onClick={handleMakeItShortClick} className=" bg-reduceButtonColor h-fit p-2 rounded-lg justify-self-center hover:scale-125 transition-transform transform-gpu ">Reduce</button>
 		<SuperFunnyLoadingHaha isLoading={isLoading} />
 		{shortUrl && <ResultLink url={shortUrl} />}
 
